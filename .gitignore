@@ -1,0 +1,17 @@
+# IDE
+/.idea/
+/.vscode/
+
+#System
+/.deleted/
+
+# External dependency
+/vendor/
+/cache/
+/storage/
+
+#Config
+.env
+
+#Other
+todo.txt
