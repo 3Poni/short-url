@@ -1,0 +1,131 @@
+* {
+    font-weight: 400;
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+a {
+    color: inherit;
+    text-decoration: none; /* no underline */
+}
+
+a:hover {
+    color: gray;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px black solid;
+    align-items: center;
+}
+.header-bar {
+    display: flex;
+    flex-direction: row;
+    gap: 30%;
+    justify-content: center;
+}
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 30%;
+    height: auto;
+    margin: 20px;
+}
+.header-item {
+    height: 60px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    align-items: center;
+}
+.main-form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.main-content {
+    padding:20px;
+    margin-bottom: 20px;
+}
+.form {
+    padding:20px;
+    margin-bottom: 20px;
+}
+
+.set-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    width: 100%;
+    height: auto;
+    align-items: center;
+}
+.set-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+
+}
+.set-list {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+}
+.set-item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.set-item-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.set-item-text{
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+.set-item-pers {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    gap: 20px;
+    align-items: center;
+}
+input,h1 {
+    text-align:center;
+}
+.set-item-url {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.auth-form {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.auth-wrap {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    align-items: center;
+}
