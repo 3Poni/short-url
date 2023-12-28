@@ -7,14 +7,14 @@ namespace App\Http\Controllers;
 use App\Support\RequestInput;
 use App\Support\View;
 
-class RegisterController
+class LoginController
 {
     public function index(View $view)
     {
-        return $view('auth.register');
+        return $view('auth.login');
     }
 
-    public function register(RequestInput $input)
+    public function login(RequestInput $input)
     {
         if($input->password != $input->confirm_password) {
             dd("Password and confirm password do not match");

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Helpers\RandomDataGenerator;
+use App\Support\View;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -24,11 +25,10 @@ class HomeController
         return $response->withHeader('content-type', 'application/json');
     }
 
-    public function index(ServerRequestInterface $request,
-                          ResponseInterface $response)
+    public function index(View $view)
     {
-        $response->getBody()->write('Welcome to home controller');
-        return $response;
+
+        return $view('index');
     }
     public function show(
         ServerRequestInterface $request,

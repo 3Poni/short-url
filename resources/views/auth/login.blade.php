@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="auth-wrap">
-            <h1>Register Form</h1>
+            <h1>Login Form</h1>
             <form class="auth-form" method="POST" action="/register">
                 <input
                     {{-- value="{{ old('last_name') }}"--}}
@@ -13,29 +13,18 @@
                 />
 
                 <input
-                        {{--  value="{{ old('email') }}"--}}
-                        name="email"
-                        placeholder="Email Address"
-                        class=""
-                />
-                <input
                         name='password'
                         placeholder="Password"
                         class=""
                 />
-                <input
-                        name='confirm_password'
-                        placeholder="Confirm Password"
-                        class=""
-                />
 
                 <button type="submit" class="">
-                    Register
+                    Login
                 </button>
 
                 <div class="">
-                    <a href="/login">
-                        Already Registered? Login
+                    <a href="/register">
+                        Don't have a Login yet? Register
                     </a>
                 </div>
             </form>
