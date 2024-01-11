@@ -6,6 +6,7 @@ use App\Support\Route;
 
 
 Route::get('/', 'HomeController@index');
+Route::post('/', 'LinkController@store');
 
 Route::get('/settings', 'Settings\MainController@index');
 Route::get('/settings/url', 'Settings\UrlController@index');
@@ -17,4 +18,8 @@ Route::post('/register', 'RegisterController@register');
 Route::get('/login', 'LoginController@index');
 Route::post('/login', 'LoginController@login');
 
-Route::get('/welcome/{name}/{id}', 'HomeController@show');
+Route::post('/logout', 'LogoutController@logout');
+
+Route::get('/sh/{url}', 'LinkController@redirect');
+
+//Route::get('/welcome/{name}/{id}', 'HomeController@show');
