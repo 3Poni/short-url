@@ -6,8 +6,8 @@ namespace App\Http\Middleware;
 
 
 use Slim\Container;
-use Slim\Http\Request as Request;
-use Slim\Http\Response as Response;
+use Psr\Http\Server\RequestHandlerInterface as Handle;
+use Psr\Http\Message\ServerRequestInterface as Request;
 
 class AuthMiddleware
 {
@@ -18,15 +18,12 @@ class AuthMiddleware
     *
     * @return \Psr\Http\Message\ResponseInterface
     */
-    public function __invoke(
-        Request $request,
-        Response $response,
-        $next)
+    public function __invoke(Request $request, Handle $handler)
     {
-        $session = $this->get('session');
-        $session->start();
-        $response = $next($request, $response);
+        session_start();
+//        $session = $this->get('session');
+//        $session->start();
 
-        return $response;
+        return $handler->handle($request);
     }
 }

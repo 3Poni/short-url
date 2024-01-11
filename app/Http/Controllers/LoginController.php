@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Support\Auth;
 use App\Support\RequestInput;
 use App\Support\View;
 
@@ -14,21 +16,17 @@ class LoginController
         return $view('auth.login');
     }
 
-    public function login(RequestInput $input)
+    public function login(RequestInput $input, User $user, Auth $auth)
     {
-        if($input->password != $input->confirm_password) {
-            dd("Password and confirm password do not match");
+        $userData = $user->where('login', $input->login)->fetch();
+        if(!$userData || !password_verify($input->password, $userData['password']) ) {
+            dd("Wrong credentials");
         }
+        unset($userData['password']);
+        $auth->setAuth($userData);
 
-        $input->forget('confirm_password');
-        $input->password = sha1($input->password);
+//        dd("You are logged in!");
 
-        if(User::where('email', $input->email)->exists()) {
-            dd("User with {$input->email} already exists");
-        }
-
-        $user = User::forceCreated($input->all());
-        dd($input->all());
         return redirect('/');
     }
 
