@@ -26,7 +26,8 @@ class HttpKernel extends Kernel
 //            FormatResponseAsJsonRequestMiddleware::class
         ],
         'web' => [
-            Middleware\RouteContextMiddleware::class
+            Middleware\RouteContextMiddleware::class,
+            Middleware\AuthMiddleware::class,
         ]
     ];
 
