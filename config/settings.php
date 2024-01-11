@@ -22,11 +22,12 @@ return function (Container $container) {
                 'settings' => ['cache' => false],
             ],
             'connection' => [
-                'driver' => 'mysql',
-                'host' => 'slim_db_1',
-                'dbname' => 'db',
-                'dbuser' => 'user',
-                'dbpass' => 'secret',
+                'driver' => 'sqlite',
+                'dbpath' => '../db.sqlite',
+//                'host' => 'slim_db_1',
+//                'dbname' => 'db',
+//                'dbuser' => 'user',
+//                'dbpass' => 'secret',
             ]
         ];
     });

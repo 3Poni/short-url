@@ -13,6 +13,7 @@ return function (Container $container) {
         $dbuser = $connection['dbuser'];
         $dbpass = $connection['dbpass'];
         $driver = $connection['driver'];
+        $dbpath = $connection['dbpath'];
 
         try {
             $connection = new PDO("{$driver}:host={$host};dbname={$dbname}", $dbuser, $dbpass);
