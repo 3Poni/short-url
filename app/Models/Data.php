@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace App\Models;
 
-use src\Database\DBConnection;
+use Src\Database\Model;
 
-class Data
+class Data extends Model
 {
     protected string $table = 'data';
 
-    public function getAll(): array
+    public function getAll()
     {
-        $this->connection->query('SELECT * FROM' . $this->table);
+        return $this->fetch('SELECT * FROM ' . $this->table);
     }
 }
