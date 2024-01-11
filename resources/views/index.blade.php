@@ -15,6 +15,13 @@
                     </form>
                 </div>
 
+                <? if(isset($_SESSION['link'])): ?>
+                <div class="link">
+                    <h1><b>Your link is:<b/></h1>
+                    <span><?= $_SERVER['HTTP_HOST'] .'/sh/'. $_SESSION['link']; ?></span>
+                </div>
+                <? unset($_SESSION['link']); ?>
+                <? endif; ?>
             </div>
         </div>
     </div>

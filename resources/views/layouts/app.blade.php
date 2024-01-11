@@ -16,15 +16,22 @@
             <div class="header-item">
                 <a href="/"><button>Main</button></a>
             </div>
-            <div class="header-item">
-                <a href="/settings"><button>Settings</button></a>
-            </div>
+            <? if (!isset($_SESSION['user'])): ?>
             <div class="header-item">
                 <a href="/login"><button>Login</button></a>
             </div>
             <div class="header-item">
                 <a href="/register"><button>Register</button></a>
             </div>
+            <? endif ?>
+            <? if (isset($_SESSION['user'])): ?>
+            <div class="header-item">
+                <a href="/settings"><button>Settings</button></a>
+            </div>
+            <div class="header-item">
+                <form action="/logout" method="POST" id="logout"><button form="logout">Logout</button></form>
+            </div>
+            <? endif ?>
         </div>
     </div>
 </header>
