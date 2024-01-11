@@ -4,7 +4,7 @@
     <div class="container">
         <div class="auth-wrap">
             <h1>Login Form</h1>
-            <form class="auth-form" method="POST" action="/register">
+            <form class="auth-form" method="POST" action="/login">
                 <input
                     {{-- value="{{ old('last_name') }}"--}}
                         name='login'
@@ -23,7 +23,7 @@
                 </button>
 
                 <div class="">
-                    <a href="/register">
+                    <a href="/login">
                         Don't have a Login yet? Register
                     </a>
                 </div>

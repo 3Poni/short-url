@@ -6,13 +6,18 @@
             <h1>URL's Settings</h1>
             <small>Here you put list of person settings and buttons to change them and add new one's</small>
         </div>
+
         <div class="set-item-pers">
-            <div class="set-item-url">
-                <input type="url" name="long" value="Long URL" disabled>
-                <input type="url" name="short" value="Short URL" disabled>
+            @isset($data)
+            <? foreach($data as $dat): ?>
+                <?= '<div class="set-item-url">
+                <input type="url" name="redirect" value="'. $dat['redirect'] .'" disabled>
+                <input type="url" name="short" value="'. $_SERVER['HTTP_HOST'] .'/sh/' . $dat['short_url'] .' " disabled>
                 <a><span>Edit</span></a>
                 <a><span>X</span></a>
-            </div>
+            </div>'; ?>
+            <? endforeach; ?>
+            @endisset
             <div class="set-item-url">
                 <input type="url" name="long" value="Long URL" disabled>
                 <input type="url" name="short" value="Short URL" disabled>
