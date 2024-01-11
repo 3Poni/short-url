@@ -112,9 +112,15 @@ input,h1 {
     text-align:center;
 }
 .set-item-url {
+    width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     gap: 10px;
+}
+
+.set-item-url input {
+    width: 250px;
 }
 
 .auth-form {
