@@ -35,6 +35,7 @@ class RequestInput
     public function __get(string $name)
     {
         throw_when(!isset($this->attributes[$name]), "{$name} does not exist on request input");
+        return $this->attributes[$name];
     }
 
     public function __invoke(string $name)
