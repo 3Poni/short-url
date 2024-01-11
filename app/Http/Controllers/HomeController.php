@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Helpers\RandomDataGenerator;
+use App\Models\Data;
 use App\Support\View;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -27,7 +28,6 @@ class HomeController
 
     public function index(View $view)
     {
-
         return $view('index');
     }
     public function show(
